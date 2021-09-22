@@ -1,8 +1,8 @@
-function download(data, filename, type) {
+function SaveFile(data, filename, type) {
     var file = new Blob([data], {type: type});
-    if (window.navigator.msSaveOrOpenBlob) // IE10+
+    if (window.navigator.msSaveOrOpenBlob)
         window.navigator.msSaveOrOpenBlob(file, filename);
-    else { // Others
+    else {
         var a = document.createElement("a"),
                 url = URL.createObjectURL(file);
         a.href = url;
